@@ -1,11 +1,10 @@
-# HANSA
-Homologous Antigen Similarity Analysis (HANSA) Tool. A biologically informed R pipeline for identifying and ranking potentially cross-reactive peptide fragments between protein antigens using BLOSUM62 similarity, MHC anchor conservation, TCR-facing residue weighting, and biochemical property preservation.
+<p align="center">
+  <img src="HANSA_icon.svg" alt="HANSA logo" width="180"/>
+</p>
 
-# HANSA
+<h3 align="center">Homologous Antigen Similarity Analysis</h3>
 
-## **Homologous Antigen Similarity Analysis**
-
-HANSA is an R-based pipeline for identifying and prioritizing **potentially cross-reactive peptide pairs** between protein antigens. Rather than performing conventional sequence alignment, HANSA compares overlapping peptide fragments (k-mers) across proteins and ranks candidate peptide pairs using a biologically informed scoring framework that incorporates sequence similarity, MHC anchor conservation, T-cell receptor (TCR)-facing residue similarity, and biochemical property preservation.
+**HANSA** is an R-based pipeline for identifying and prioritizing **potentially cross-reactive peptide pairs** between protein antigens. Rather than performing conventional sequence alignment, HANSA compares overlapping peptide fragments (k-mers) across proteins and ranks candidate peptide pairs using a biologically informed scoring framework that incorporates sequence similarity, MHC anchor conservation, T-cell receptor (TCR)-facing residue similarity, and biochemical property preservation.
 
 The software is intended as a hypothesis-generation tool for exploring peptide cross-reactivity in applications such as vaccine design, infectious disease research, autoimmunity, and immunopeptidomics.
 
@@ -167,6 +166,16 @@ Required R packages:
    * Save the results as `crossreactivity_results.tsv`
 
 ---
+# Visualization
+
+- Includes an additional R script for generating **Circos plots** to visualize antigen relatedness and cross-reactive peptide connections between sequences.
+- Circos visualization highlights sequence-level relationships and helps interpret network-like patterns of antigen similarity.
+
+![HANSA Circos Plot](Visualization.svg)
+
+**Figure:** Circos plot representing antigen similarity relationships inferred by HANSA. The visualization shows predicted peptide-level homology between viral antigens (*SARS-CoV-2 Spike protein*, *Herpes Simplex Virus glycoprotein B*) and tumor-associated antigens (*PRAME*, *MAGEA1*). Edges indicate candidate cross-reactive peptide pairs identified using a composite scoring framework incorporating BLOSUM62 similarity, MHC anchor conservation, and TCR-facing residue weighting.
+
+---
 
 # Applications
 
@@ -180,7 +189,13 @@ HANSA can be applied to:
 * Cross-reactive T-cell epitope exploration
 
 ---
+## Citation
 
+If you use this software, please cite:
+
+> Darshak K. Bhatt, 2026. HANSA: Homologous Antigen Similarity Analysis, a computational framework for peptide cross-reactivity screening using k-mer based similarity scoring. GitHub: https://github.com/d-bhatt/HANSA
+
+---
 # Disclaimer
 
 HANSA is intended as a **candidate prioritization and exploratory analysis tool**. The composite scoring framework is heuristic and is designed to identify peptide pairs that merit further structural, computational, or experimental investigation. The software does **not** predict experimentally validated T-cell cross-reactivity, MHC binding affinity, or immunogenicity.
